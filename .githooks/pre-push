@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Pre-push hook: runs secret scanner on outgoing commits.
+# Install: cp .githooks/pre-push .git/hooks/pre-push && chmod +x .git/hooks/pre-push
+# Or:      git config core.hooksPath .githooks
+
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+SCANNER="${REPO_ROOT}/scripts/secret-push-check.py"
+
+if [[ ! -f "$SCANNER" ]]; then
+  echo "⚠️  secret-push-check.py not found – skipping secret scan"
+  exit 0
+fi
+
+echo "🔒 Running pre-push secret scan..."
+python3 "$SCANNER" "$@"
