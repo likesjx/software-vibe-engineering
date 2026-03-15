@@ -48,7 +48,7 @@ The key word is "honest." An agent that claims `watched-live` when it only achie
 
 ## Implementation
 
-In the Philotic Stack, the verification ladder is enforced via the `verification-ladder` skill in `skills/verification-ladder/SKILL.md`.
+In SVE, the verification ladder is enforced via the `verification-ladder` skill in `skills/verification-ladder/SKILL.md`.
 
 ---
 
