@@ -32,7 +32,6 @@ MuninnDB implements cognitive memory dynamics: memories strengthen with use, fad
 ## The Bootstrap Sequence
 
 At the start of every session, agents must:
-
 1. **Recall Self** – `muninn_recall(identity, operating_posture)`
 2. **Recall User** – `muninn_recall(user_preferences, collaboration_style)`
 3. **Recall Topic** – `muninn_where_left_off` + `active_goal`
@@ -51,8 +50,4 @@ Every reality gap discovered during a slice is written to Muninn. Over time, thi
 
 ## Implementation
 
-The Philotic Stack uses [MuninnDB](https://github.com/scrypter/munnindb) as its memory mesh, connected via MCP, REST, and gRPC.
-
----
-
-*Pattern defined by Jared & Antigravity, March 2026.*
+SVE uses [MuninnDB](https://github.com/scrypter/munnindb) as its memory mesh, connected via MCP, REST, and gRPC.
