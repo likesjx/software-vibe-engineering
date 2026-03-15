@@ -33,7 +33,7 @@ Amnesia kills agentic productivity. Every session begins with a mandatory bootst
 No proof, no write access.
 
 ### 3. Muninn: Heuristic Context Mesh
-Semantic memory is externalized into MuninnDB, a shared heuristic mesh across agents and sessions:
+Semantic memory is externalized into a shared heuristic mesh across agents and sessions:
 - **Cross-Conversation Recall** – Retrieve reality gaps from sessions ago
 - **Token Optimization** – Query only load-bearing context, never dump the whole codebase
 
@@ -41,16 +41,20 @@ Semantic memory is externalized into MuninnDB, a shared heuristic mesh across ag
 File-based executable contracts that define exact operational steps AND explicit negative boundaries (what the skill does NOT own). Prevents rogue agents from hallucinating sweeping refactors.
 
 Core skills include:
-- `philotic-slice-closeout` – Forces operational closure and disposition updates
+- `slice-closeout` – Forces operational closure and disposition updates
 - `verification-ladder` – Governs validation depth and confidence classification
 - `muninn-memory-habit` – Mandatory bootstrap and context compression across sessions
+- `proposal-maintainer` – Keeps architecture proposals current and linked to tasks
+- `architecture-docs-maintainer` – Maintains frontmatter, domains, and doc cross-links
+- `runtime-debugger` – Structured live-stack debugging when tests aren't enough
+- `engine-check` – Validates repo health: required files, tool availability, test baselines
 
 ### 5. Verification Ladder: The Confidence Contract
 Confidence is measurable, not heuristic. Every mutation must clear specific rungs:
 
 | Rung | Description |
 |------|-------------|
-| `test-green` | Isolated crate/unit contract tests pass |
+| `test-green` | Isolated unit/contract tests pass |
 | `smoke-green` | Binary execution scripts validate against live sockets |
 | `watched-live` | Physically observe materialized runtime and log output |
 
@@ -62,72 +66,48 @@ The self-tuning mechanism. At slice close-out, agents flag where human assumptio
 
 ---
 
-## Reference Implementation: The Philotic Stack
+## Repository Structure
 
-The canonical implementation of SVE is the **Philotic Dev Engine**:
-
-- **Source Code**: [github.com/likesjx/philotic-stack](https://github.com/likesjx/philotic-stack)
-- **Architecture Docs**: [The Philotic Engine Blueprint](https://test.jaredlikes.com/philotic-engine/)
-
-### Stack Overview
-
-| Component | Role |
-|-----------|------|
-| `ansible/` | Rust hotel daemon – materializes agents, manages IPC + mesh |
-| `crates/` | Core Rust crates for the runtime |
-| `skills/` | Bounded skill contracts (slice-closeout, verification-ladder, muninn-habit) |
-| `docs/` | Architecture proposals, task tracking, port blueprints |
-| `scripts/` | Automation and git hooks |
-| `AGENTS.md` | The Constitution – sovereign agent protocol |
-| `CLAUDE.md` | Agent-specific operating directives |
-
-### Engine Telemetry
-
-The Philotic Engine tracks real-time sovereign metrics:
-- **Total Structural Mass (LOC)** – Full codebase weight
-- **24H Cognitive Velocity** – Lines changed in rolling window
-- **Muninn Sync Events** – Memory read/write operations
-- **Context Density** – Ratio of load-bearing context to total tokens
-
-### Tech
-- **Language**: Rust (94.7%), Shell, Python
-- **Memory**: MuninnDB (sovereign, decay-based cognitive memory)
-- **Agents**: Antigravity (operational), Codex (architectural), Claude (refactoring)
-- **Contributors**: 2 (likesjx + Claude)
-- **Commits**: 168+
+```
+software-vibe-engineering/
+├── README.md                        # This file – SVE philosophy and patterns
+├── CONSTITUTION.md                  # Tool-agnostic agent governance rules
+├── patterns/
+│   ├── stateful-vibe-engineering.md # The core SVE pattern
+│   ├── muninn-memory-mesh.md        # Externalized semantic memory
+│   ├── verification-ladder.md       # Confidence measurement ladder
+│   └── slice-closeout.md            # Operational closure protocol
+├── skills/
+│   ├── README.md                    # Skill registry and categories
+│   ├── _template/SKILL.md           # Template for creating new skills
+│   ├── slice-closeout/SKILL.md      # End-of-slice closure workflow
+│   ├── verification-ladder/SKILL.md # Validation depth selection
+│   ├── muninn-memory-habit/SKILL.md # Bootstrap and memory protocol
+│   ├── proposal-maintainer/SKILL.md # Proposal hygiene and tracking
+│   ├── architecture-docs-maintainer/SKILL.md
+│   ├── runtime-debugger/SKILL.md    # Live-stack debugging
+│   └── engine-check/SKILL.md        # Repo health validation
+├── docs-structure/
+│   ├── FRONTMATTER.md               # Document metadata guide
+│   ├── PROPOSAL_TEMPLATE.md         # Architecture proposal template
+│   └── TASK_SURFACE.md              # Task tracking guide
+├── scripts/
+│   └── secret-push-check.py         # Pre-push secret scanner
+└── .githooks/
+    └── pre-push                     # Git hook for secret scanning
+```
 
 ---
 
 ## Quick Start
 
-```bash
-# Clone the reference implementation
-git clone https://github.com/likesjx/philotic-stack.git
-cd philotic-stack
+To adopt SVE in your own project:
 
-# Read the constitution first
-cat AGENTS.md
-
-# Explore the skills
-ls skills/
-```
-
----
-
-## Repository Structure
-
-```
-software-vibe-engineering/
-├── README.md              # This file – SVE philosophy and patterns
-├── CONSTITUTION.md        # Tool-agnostic agent governance rules
-├── patterns/
-│   ├── stateful-vibe-engineering.md
-│   ├── muninn-memory-mesh.md
-│   ├── verification-ladder.md
-│   └── slice-closeout.md
-└── engines/
-    └── philotic-stack.md    # Reference engine docs
-```
+1. **Read the Constitution** – Copy `CONSTITUTION.md` into your repo as `AGENTS.md`
+2. **Install the skills** – Copy the `skills/` directory into your repo
+3. **Set up doc structure** – Use `docs-structure/` templates for proposals and task tracking
+4. **Configure git hooks** – Copy `.githooks/` and `scripts/` for secret scanning
+5. **Bootstrap every session** – Agents must prove identity, directive, and continuity before writing
 
 ---
 
