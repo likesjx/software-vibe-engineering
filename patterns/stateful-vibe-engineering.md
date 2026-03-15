@@ -27,16 +27,12 @@ You don't ask the fluid to build the pipe. You build the pipe, and the fluid mov
 ## Key Differentiators from Vibe Coding
 
 | Vibe Coding | Stateful Vibe Engineering |
-|-------------|-------------------------|
+|-------------|---------------------------|
 | Stateless prompts | Mandatory bootstrap with recall triad |
 | Trust the output | Verify via ladder (test/smoke/watched-live) |
 | One agent, one chat | Multi-agent with workstream isolation |
 | Fix bugs when they appear | Reality Gap Loop updates the system itself |
 | Implicit scope | Explicit skill boundaries with negative declarations |
-
-## Implementation
-
-See the [Philotic Stack](https://github.com/likesjx/philotic-stack) for the canonical Rust implementation of SVE.
 
 ---
 
