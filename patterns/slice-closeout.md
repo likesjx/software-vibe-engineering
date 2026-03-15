@@ -43,7 +43,7 @@ Update `docs/task.md` (or equivalent) with:
 
 ## Implementation
 
-In the Philotic Stack, slice close-out is enforced via the `philotic-slice-closeout` skill in `skills/philotic-slice-closeout/SKILL.md`.
+In SVE, slice close-out is enforced via the `slice-closeout` skill in `skills/slice-closeout/SKILL.md`.
 
 ---
 
